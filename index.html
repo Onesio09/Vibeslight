@@ -82,4 +82,49 @@
     </style>
 </head>
 <body>
-    <div class="deterioracao" id="deterioracao
+    <div class="deterioracao" id="deterioracao"></div>
+    <div class="container">
+        <h1>SUA ANSIEDADE ESTÁ SAINDO DO CONTROLE</h1>
+        
+        <div class="balanca">
+            <svg viewBox="0 0 200 200" style="width:100%">
+                <circle cx="100" cy="100" r="90" fill="none" stroke="#333" stroke-width="10"/>
+                <circle cx="100" cy="100" r="90" fill="none" stroke="#FF0000" stroke-width="10" stroke-dasharray="565" stroke-dashoffset="141" stroke-linecap="round"/>
+            </svg>
+            <div class="ponteiro" id="ponteiro"></div>
+        </div>
+
+        <div class="timer" id="timer">2</div>
+        <p style="margin-bottom:20px">Segundos para sua mente travar</p>
+
+        <a href="https://omg10.com/4/11025748" class="cta">
+            QUERO CONTROLAR MINHA ANSIEDADE AGORA
+        </a>
+        
+        <p style="font-size:12px;opacity:0.6">Zones ativas: 11020715 - Popunder, 11020720 - Interstitial</p>
+    </div>
+
+    <script>
+        // Timer 2s
+        let tempo = 2;
+        const timerEl = document.getElementById('timer');
+        const deterioracao = document.getElementById('deterioracao');
+        
+        const contagem = setInterval(() => {
+            tempo--;
+            timerEl.textContent = tempo;
+            
+            if(tempo <= 0) {
+                clearInterval(contagem);
+                timerEl.textContent = "AGORA";
+                deterioracao.style.opacity = "1";
+            }
+        }, 1000);
+
+        // Ativa deterioração imediata
+        setTimeout(() => {
+            deterioracao.style.opacity = "1";
+        }, 500);
+    </script>
+</body>
+</html>
